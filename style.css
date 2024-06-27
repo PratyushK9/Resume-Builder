@@ -38,7 +38,10 @@ label {
 input[type="text"],
 input[type="email"],
 input[type="tel"],
-textarea {
+textarea,
+input[type="url"],
+input[type="number"],
+input[type="file"] {
     width: calc(100% - 22px);
     padding: 10px;
     margin-bottom: 10px;
@@ -54,8 +57,104 @@ button {
     font-size: 1em;
     cursor: pointer;
     border-radius: 4px;
+    margin-top: 10px;
 }
 
 button:hover {
     background-color: #0056b3;
+}
+
+.field-wrapper {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.field-wrapper input,
+.field-wrapper textarea {
+    flex: 1;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
+.delete-button {
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.delete-button:hover {
+    background-color: #c82333;
+}
+
+/* Styles for the generated CV */
+#cvOutput {
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #fafafa;
+}
+
+.cv-section {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.cv-section img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin-right: 20px;
+}
+
+.cv-section .cv-details {
+    flex: 1;
+}
+
+.cv-section h2 {
+    color: #007bff;
+    border-bottom: 1px solid #007bff;
+    padding-bottom: 5px;
+}
+
+.cv-section p {
+    margin: 5px 0;
+}
+
+.cv-section h3 {
+    color: #333;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+    margin-top: 20px;
+}
+
+.social-links p {
+    margin: 5px 0;
+}
+
+.career-objective {
+    margin-top: 20px;
+   
+}
+
+.career-objective p {
+    margin: 5px 0;
+}
+
+.education-item,
+.experience-item {
+    margin-bottom: 15px;
+   
+}
+
+.education-item h4,
+.experience-item h4 {
+    margin: 5px 0;
 }

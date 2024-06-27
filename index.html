@@ -13,61 +13,59 @@
             <fieldset>
                 <legend>Personal Information</legend>
                 <label for="fullName">Full Name:</label>
-                <input type="text" id="fullName" name="fullName" required>
+                <input type="text" id="fullName" name="fullName" required placeholder="Pratyush Kumar Sahu">
 
                 <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
+                <input type="email" id="email" name="email" required placeholder="pratyushkumarvssut23@gmail.com">
 
                 <label for="phone">Phone:</label>
-                <input type="tel" id="phone" name="phone" required>
-
-                <label for="phone">Address:</label>
-                <input type="tel" id="phone" name="phone" required>
-
-                <label for="phone">Age:</label>
-                <input type="tel" id="phone" name="phone" required>
-
-                <label for="profile-picture">Profile Picture:</label>
-                <input type="file" id="profile-picture" name="profile-picture" required accept="image/*">
-
-                <div class="imagePreview">
-                    <img id="profile-picture" src="" alt="image preview"/>
-                </div>
-
+                <input type="tel" id="phone" name="phone" required >
+                
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" required >
+                
+                <label for="image">Profile Image:</label>
+                <input type="file" id="image" name="image" accept="image/*" required>
             </fieldset>
 
             <fieldset>
                 <legend>Social Links</legend>
-                <label for="github">Github:</label>
-                <input type="text" id="github" name="github" >
-
                 <label for="linkedin">LinkedIn:</label>
-                <input type="text" id="linkedin" name="linkedin"  required>
+                <input type="url" id="linkedin" name="linkedin" placeholder="https://www.linkedin.com/in/pratyush-kumar-sahu-250218263/">
 
-
-            </fieldset>
-
-            <fieldset>
-                <legend>Education</legend>
-                <label for="matriculation">Matriculation:</label>
-                <input type="file" id="matriculation" name="matriculation" accept="application/pdf" required>
-
-
-                <label for="intermediate">Intermediate:</label>
-                <input type="file" id="intermediate" name="intermediate" accept="application/pdf" required>
-                
+                <label for="github">GitHub:</label>
+                <input type="url" id="github" name="github" placeholder="https://github.com/PratyushK9">
             </fieldset>
 
             <fieldset>
                 <legend>Career Objective</legend>
-                <textarea name="career" id="career" placeholder="Word limit is 100 "></textarea>
-
+                <textarea id="careerObjective" name="careerObjective" rows="4" required></textarea>
             </fieldset>
 
-            <fieldset>
+            <fieldset id="educationFieldset">
+                <legend>Education</legend>
+                <div class="field-wrapper">
+                    <label for="courseName">Course Name:</label>
+                    <input type="text" name="courseName" required placeholder="B.Tech">
+
+                    <label for="startYear">Start Year:</label>
+                    <input type="number" name="startYear" required placeholder="2023">
+
+                    <label for="endYear">End Year:</label>
+                    <input type="number" name="endYear" required placeholder="2027">
+
+                    <button type="button" class="delete-button" onclick="deleteField(this)">Delete</button>
+                </div>
+                <button type="button" class="add-button" onclick="addField('educationFieldset', 'education')">Add Education</button>
+            </fieldset>
+
+            <fieldset id="experienceFieldset">
                 <legend>Experience</legend>
-                <label for="experience">Experience:</label>
-                <textarea id="experience" name="experience" rows="4" required></textarea>
+                <div class="field-wrapper">
+                    <textarea name="experience" rows="4" required placeholder="CEO,CTO and COO at Enigma for a Decade "></textarea>
+                    <button type="button" class="delete-button" onclick="deleteField(this)">Delete</button>
+                </div>
+                <button type="button" class="add-button" onclick="addField('experienceFieldset', 'experience')">Add Experience</button>
             </fieldset>
 
             <button type="submit">Generate CV</button>
